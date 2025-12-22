@@ -1,0 +1,29 @@
+# Python environments
+.venv/
+venv/
+env/
+ENV/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml  # Agar secrets use kar rahe ho
+
+# Data files (optional, agar aap dataset.csv GitHub pe nahi daalna chahte)
+# dataset.csv
+
+# Binary files (agar bade ho to GitHub limit hai 100MB, agar chhote hain to ok)
+# svm_model.pkl
+# vectorizer.pkl
+
+# VS Code settings
+.vscode/
