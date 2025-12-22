@@ -4,6 +4,45 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 
+################################################################################
+# Code to Solve the Product Error.
+################################################################################
+
+import nltk
+import os
+
+# Set custom NLTK data path (Streamlit Cloud pe yeh writable hai)
+nltk_data_dir = os.path.expanduser('~/nltk_data')
+if not os.path.exists(nltk_data_dir):
+    os.makedirs(nltk_data_dir)
+
+# Add this path to NLTK's search paths
+nltk.data.path.append(nltk_data_dir)
+
+# Download required resources if not found (quiet=True to avoid extra output)
+try:
+    nltk.data.find('tokenizers/punkt_tab')
+except LookupError:
+    nltk.download('punkt_tab', download_dir=nltk_data_dir, quiet=True)
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', download_dir=nltk_data_dir, quiet=True)  # punkt_tab ke liye punkt bhi chahiye
+
+# Agar aap stopwords ya wordnet bhi use kar rahe ho (lemmatizer ke liye)
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords', download_dir=nltk_data_dir, quiet=True)
+
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
+    nltk.download('wordnet', download_dir=nltk_data_dir, quiet=True)
+
+################################################################################
+
 # Download required NLTK datasets
 try:
     nltk.data.find('tokenizers/punkt')
