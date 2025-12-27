@@ -90,7 +90,20 @@ def preprocess_text(text):
     
     # Step 5: REMOVE STOPWORDS
     stop_words = set(stopwords.words('english'))
-    negations = {"not", "no", "never", "n't"}
+    negations = {
+        # English negations
+        "not", "no", "never", "n't", "dont", "doesn't", "isn't", "aren't", 
+        "wasn't", "weren't", "haven't", "hasn't", "hadn't", "shouldn't", "wouldn't",
+        
+        # Roman Urdu / Hindi-Urdu negations (most common)
+        "nahi", "nhi", "nahin", "nhein", "nehi",      # "نہیں" - main negation ("not")
+        "na", "nah", "nahiin",                         # "نہ" - prohibitive or poetic "no/not"
+        "mat", "mut", "mt",                            # "مت" - "don't" (imperative prohibition)
+        "kabhi", "kabhie", "kbhi", "kabi",             # "کبھی" - with nahi = "never"
+        "koi",                                         # "کوئی" - with nahi = "no one/nothing"
+        "bilkul",                                      # "بالکل" - with nahi = "not at all"
+        "zarra", "zara"                                # "ذرہ" - with nahi = "not even a bit"
+    }
     stop_words = stop_words - negations
     tokens = [word for word in tokens if word not in stop_words and len(word) > 1]
     
