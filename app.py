@@ -1,7 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
-import PyPDF2
+from pypdf import PdfReader
 from docx import Document
 import tempfile
 import os
@@ -74,7 +74,7 @@ svm_model, vectorizer = load_model()
 # Helper functions for file processing
 def extract_text_from_pdf(pdf_file):
     """Extract text from PDF file"""
-    pdf_reader = PyPDF2.PdfReader(pdf_file)
+    pdf_reader = PdfReader(pdf_file)
     text = ""
     for page in pdf_reader.pages:
         text += page.extract_text()
