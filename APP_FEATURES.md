@@ -54,8 +54,23 @@
 
 #### File: `requirements.txt`
 
-- ✅ Added: `PyPDF2==4.0.1` (PDF file handling)
+**Core ML & NLP Libraries:**
+
+- ✅ `scikit-learn==1.8.0` (SVM, TF-IDF vectorization)
+- ✅ `nltk==3.9.2` (Text preprocessing, tokenization, lemmatization)
+- ✅ `pandas==2.3.3` (Data manipulation & analysis)
+- ✅ `numpy==2.4.0` (Numerical computations)
+- ✅ `matplotlib==3.10.8` & `seaborn==0.13.2` (Visualizations)
+- ✅ `joblib==1.5.3` (Model persistence)
+
+**File Handling Libraries:**
+
+- ✅ Added: `pypdf==4.0.1` (PDF file handling)
 - ✅ Added: `python-docx==0.8.11` (DOCX file handling)
+
+**Web Framework:**
+
+- ✅ `streamlit==1.52.2` (Interactive web app)
 
 ### 5. **How to Use**
 
@@ -95,9 +110,29 @@ Total Reviews Analyzed: 1000
 
 ### 7. **Supported File Formats**
 
-- **PDF**: .pdf
-- **Word (2007+)**: .docx
-- **Word (Legacy)**: .doc (basic support)
+- **PDF**: .pdf (using pypdf)
+- **Word (2007+)**: .docx (using python-docx)
+- **Word (Legacy)**: .doc (basic support using python-docx)
+
+### 8. **Core Technologies Used**
+
+**Machine Learning:**
+
+- SVM (Support Vector Machine) with linear kernel
+- TF-IDF (Term Frequency-Inverse Document Frequency) vectorization
+- 5000 features extracted (unigrams + bigrams)
+
+**Text Processing:**
+
+- NLTK for tokenization, lemmatization, and stopword removal
+- Custom preprocessing with support for code-mixed text (English + Roman Urdu)
+- Negation preservation for sentiment context
+
+**Data Science:**
+
+- Pandas for data manipulation
+- NumPy for numerical operations
+- Matplotlib & Seaborn for visualizations
 
 ### 8. **Requirements**
 
